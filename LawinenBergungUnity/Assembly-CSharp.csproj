@@ -44,6 +44,7 @@
      <Compile Include="Assets\Scripts\Cameras\SondeOrbitCam.cs" />
      <Compile Include="Assets\Scripts\MovePlayer.cs" />
      <Compile Include="Assets\Scripts\Cameras\FirstPersonCam.cs" />
+     <Compile Include="Assets\Scripts\UI\InventoryController.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UI" />
      <Folder Include="Assets\3DModels" />
@@ -81,6 +82,7 @@
      <Folder Include="Assets\3DModels\Snow Mountain\Source" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
+     <Folder Include="Assets\Scripts\UI" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\3DModels\Snow_mountains2\snow_mountain\Prefabs" />
      <Folder Include="Assets\3DModels\Snow Mountain\Materials" />

@@ -351,6 +351,7 @@
 "Assets/Scripts/Cameras/FirstPersonCam.cs"
 "Assets/Scripts/Cameras/SondeOrbitCam.cs"
 "Assets/Scripts/MovePlayer.cs"
+"Assets/Scripts/UI/InventoryController.cs"
 -langversion:9.0
 
 /deterministic

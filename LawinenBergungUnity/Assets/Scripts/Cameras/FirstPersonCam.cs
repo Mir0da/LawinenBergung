@@ -22,7 +22,6 @@ public class FirstPersonCam : MonoBehaviour
     
     private void Update()
     {
-        if (!Input.GetMouseButton(1)) return;
         //get mouse Input
          yaw = Input.GetAxis("Mouse X");
          pitch = Mathf.Clamp(Input.GetAxis("Mouse Y"), -90f, 90f);
