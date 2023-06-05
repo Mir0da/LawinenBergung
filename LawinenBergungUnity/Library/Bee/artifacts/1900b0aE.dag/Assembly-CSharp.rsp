@@ -350,7 +350,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Cameras/FirstPersonCam.cs"
 "Assets/Scripts/Cameras/SondeOrbitCam.cs"
+"Assets/Scripts/HighlightAtHovering.cs"
 "Assets/Scripts/MovePlayer.cs"
+"Assets/Scripts/RaycasterFirstPersonCam.cs"
+"Assets/Scripts/Suchgerät.cs"
 "Assets/Scripts/UI/InventoryController.cs"
 -langversion:9.0
 

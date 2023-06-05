@@ -43,8 +43,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Cameras\SondeOrbitCam.cs" />
      <Compile Include="Assets\Scripts\MovePlayer.cs" />
-     <Compile Include="Assets\Scripts\Cameras\FirstPersonCam.cs" />
      <Compile Include="Assets\Scripts\UI\InventoryController.cs" />
+     <Compile Include="Assets\Scripts\Cameras\FirstPersonCam.cs" />
+     <Compile Include="Assets\Scripts\RaycasterFirstPersonCam.cs" />
+     <Compile Include="Assets\Scripts\HighlightAtHovering.cs" />
+     <Compile Include="Assets\Scripts\Suchgerät.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UI" />
      <Folder Include="Assets\3DModels" />

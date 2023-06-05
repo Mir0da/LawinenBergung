@@ -34,6 +34,7 @@ public class InventoryController : MonoBehaviour
                 Cursor.visible = true;
                 //disable Cam Movement
                 cam.GetComponent<FirstPersonCam>().enabled = false;
+                cam.GetComponent<RaycasterFirstPersonCam>().enabled = false;
                 //disable playermovement too?
                 //player.GetComponent<MovePlayer>().enabled = true;
             }
@@ -49,6 +50,7 @@ public class InventoryController : MonoBehaviour
                 Cursor.visible = false;
                 //enable Cam Movement
                 cam.GetComponent<FirstPersonCam>().enabled = true;
+                cam.GetComponent<RaycasterFirstPersonCam>().enabled = true;
                 //disable playermovement too?
                 //player.GetComponent<MovePlayer>().enabled = true;
             }
