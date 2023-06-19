@@ -350,11 +350,15 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Cameras/FirstPersonCam.cs"
 "Assets/Scripts/Cameras/SondeOrbitCam.cs"
-"Assets/Scripts/HighlightAtHovering.cs"
-"Assets/Scripts/ItemHandler.cs"
+"Assets/Scripts/Interaction.cs"
+"Assets/Scripts/InteractionManager.cs"
+"Assets/Scripts/Items/HighlightAtHovering.cs"
+"Assets/Scripts/Items/ItemHandler.cs"
+"Assets/Scripts/Items/Shovel.cs"
+"Assets/Scripts/Items/Suchgerät.cs"
 "Assets/Scripts/MovePlayer.cs"
 "Assets/Scripts/RaycasterFirstPersonCam.cs"
-"Assets/Scripts/Suchgerät.cs"
+"Assets/Scripts/SpawnRandom.cs"
 "Assets/Scripts/UI/InventoryController.cs"
 -langversion:9.0
 

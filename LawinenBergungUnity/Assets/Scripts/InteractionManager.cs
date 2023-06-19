@@ -13,6 +13,7 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI helpCountLabel;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private List<Interaction> interactions;
+    [SerializeField] private Animator shovelAnimator;
 
     private Interaction currentInteraction;
     private int interactionIndex;
@@ -70,6 +71,7 @@ public class InteractionManager : MonoBehaviour
             interactionIndex++;
             currentInteraction = interactions[interactionIndex];   
             instructionLabel.SetText(currentInteraction.Instruction);
+            
 
         }
         else

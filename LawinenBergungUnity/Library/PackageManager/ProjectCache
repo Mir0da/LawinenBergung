@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638213875508698648
-    m_Hash: 2965214973
+      ticks: 638227892307334617
+    m_Hash: 521134127
   m_LockFileStatus:
     m_FilePath: C:/Users/sophi/LawinenBergung/LawinenBergungUnity/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638213875508758645
-    m_Hash: 762696274
+      ticks: 638227892307364655
+    m_Hash: 2213970193
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
