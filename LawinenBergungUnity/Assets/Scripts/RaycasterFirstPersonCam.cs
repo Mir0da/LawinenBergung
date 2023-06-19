@@ -32,14 +32,8 @@ public class RaycasterFirstPersonCam : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 20.0f, layerMask)) //20= länge des Strahls
             {
-                
                 Debug.DrawLine(ray.origin, hit.point, Color.green);
                 info.SetText(hit.transform.GameObject().name);
-                
-            }
-            else
-            {
-               Debug.DrawLine(ray.origin, ray.origin + ray.direction * 20.0f, Color.red);
             }
         }
     }
