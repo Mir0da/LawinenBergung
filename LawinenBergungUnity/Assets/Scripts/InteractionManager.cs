@@ -71,7 +71,6 @@ public class InteractionManager : MonoBehaviour
             interactionIndex++;
             currentInteraction = interactions[interactionIndex];   
             instructionLabel.SetText(currentInteraction.Instruction);
-            
 
         }
         else

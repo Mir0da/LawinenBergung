@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:LawinenBergungUnity/Assets/Scenes/RomyScene.unity.meta
 guid: 9f394c5ae03aea2478e1fd77951d8691
+========
+guid: af717a56187c24c43b112db0fd8cc696
+>>>>>>>> add-gitignore:LawinenBergungUnity/Assets/Scenes/Test.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
