@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Suchgerät : MonoBehaviour
 {
@@ -10,12 +11,17 @@ public class Suchgerät : MonoBehaviour
     [SerializeField] private TextMeshProUGUI meterAnzeige;
     [SerializeField] private TextMeshProUGUI winkelAnzeige;
     [SerializeField] private GameObject player;
+    [SerializeField] private Image arrowFarLeft;
+    [SerializeField] private Image arrowLeft;
+    [SerializeField] private Image arrowMid;
+    [SerializeField] private Image arrowRight;
+    [SerializeField] private Image arrowFarRight;
 
     private float distance;
     // Start is called before the first frame update
     void Start()
     {
-        
+        disableAllArrows();
     }
 
     // Update is called once per frame
@@ -40,6 +46,50 @@ public class Suchgerät : MonoBehaviour
         playerVect.y = 0;
         float angle = Vector3.SignedAngle(targetDir, playerVect, Vector3.up);
         
-        winkelAnzeige.SetText(Math.Round(angle,1).ToString() + "°");
+        displayAngleAsArrow(angle);
+        
+        //winkelAnzeige.SetText(Math.Round(angle,1).ToString() + "°");
+    }
+
+    private void displayAngleAsArrow(float angle)
+    {
+        double roundedAngel = Math.Round(angle, 1);
+
+        if (roundedAngel <= 10 && roundedAngel >= -10)
+        {
+            disableAllArrows();
+            arrowMid.gameObject.SetActive(true);
+        }
+        else if (roundedAngel > 10 && roundedAngel <= 45)
+        {
+            disableAllArrows();
+            arrowLeft.gameObject.SetActive(true);
+        }
+        else if (roundedAngel >= -45 && roundedAngel < -10)
+        {
+            disableAllArrows(); 
+            arrowRight.gameObject.SetActive(true);
+        }
+        else if (roundedAngel > 45 && roundedAngel < 180)
+        {
+            disableAllArrows();
+            arrowFarLeft.gameObject.SetActive(true);
+        }
+        else if (roundedAngel < -45 && roundedAngel >= -180)
+        {
+            disableAllArrows();
+            arrowFarRight.gameObject.SetActive(true);
+            
+        }
+
+    }
+
+    private void disableAllArrows()
+    {
+        arrowMid.gameObject.SetActive(false);
+        arrowFarRight.gameObject.SetActive(false);
+        arrowFarLeft.gameObject.SetActive(false);
+        arrowRight.gameObject.SetActive(false);
+        arrowLeft.gameObject.SetActive(false);
     }
 }
