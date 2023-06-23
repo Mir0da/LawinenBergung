@@ -6,14 +6,17 @@ using System.Collections.Generic;
 
 public class SpawnRandom : MonoBehaviour
 {
-    [SerializeField] private GameObject spawnObj;
+    [SerializeField] private GameObject dummy;
+    [SerializeField] private GameObject rightSnowPile;
+    [SerializeField] private GameObject[] falseSnowPiles;
 
     private float MinX = 0;
-    private float MaxX = 10;
-    private float MinY = 0;
+    private float MaxX = 120;
+    //Y ist fix damit die Haufen nicht ind er Luft herumschweben 
+    private float MinY = 10;
     private float MaxY = 10;
     private float MinZ = 0;
-    private float MaxZ = 10;
+    private float MaxZ = 130;
 
     private List<Vector3> spawnPoints;
 
@@ -28,7 +31,9 @@ public class SpawnRandom : MonoBehaviour
 
     public void Start()
     {
-        SpawnObject2();
+        SpawnDummy();
+        SpawnPiles();
+        
     }
 
     private void SpawnObject1()
@@ -37,13 +42,36 @@ public class SpawnRandom : MonoBehaviour
         float y = Random.Range(MinY, MaxY);
         float z = Random.Range(MinZ, MaxZ);
 
-        spawnObj.transform.position = new Vector3(x, y, z);
+        dummy.transform.position = new Vector3(x, y, z);
+    }
+
+    private Vector3 randomVect()
+    {
+        float x = Random.Range(MinX, MaxX);
+        //Y ist fix damit die Haufen nicht ind er Luft herumschweben 
+        //float y = Random.Range(MinY, MaxY);
+        float y = 8.5f; //Testhöhe
+        float z = Random.Range(MinZ, MaxZ);
+
+        return new Vector3(x, y, z);;
     }
     
-    private void SpawnObject2()
+    private void SpawnPiles()
     {
-        Vector3 randomVector = GetRandomVector3();
-        spawnObj.transform.position = randomVector;
+        foreach (GameObject pile in falseSnowPiles)
+        {
+            Vector3 randomVector = randomVect();
+            pile.transform.position = randomVector;
+        }
+        
+    }
+    
+    private void SpawnDummy()
+    {
+        Vector3 randomVector = randomVect();
+        dummy.transform.position = randomVector;
+        rightSnowPile.transform.position = randomVector;
+
     }
 
     private Vector3 GetRandomVector3()

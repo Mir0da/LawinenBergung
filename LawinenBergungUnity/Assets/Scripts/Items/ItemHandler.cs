@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 public class ItemHandler : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-
-    [SerializeField] private GameObject shovelPrefab;
-    [SerializeField] private GameObject probePrefab;
-    [SerializeField] private GameObject locatorPrefab;
-    [SerializeField] private GameObject markerPrefab;
+    [SerializeField] private GameObject shovel;
+    
 
     //[SerializeField]private PostProcessProfile sunGlassProfile;
     //[SerializeField]private PostProcessProfile startProfile;
@@ -19,17 +17,21 @@ public class ItemHandler : MonoBehaviour
     {
     }
 
-    private void SpawnInFront(GameObject prefab)
-    { 
+    public void spawnShovel()
+    {
+        SpawnInFront(shovel);
+    }
+    private void SpawnInFront(GameObject thing)
+    {
         Vector3 playerPos = player.transform.position;
         Vector3 playerDirection = player.transform.forward;
         Quaternion playerRotation = player.transform.rotation;
-        float spawnDistance = 10;
+        float spawnDistance = 5;
             
         Vector3 spawnPos = playerPos + playerDirection*spawnDistance;
-            
+        
         Debug.Log("Spawned Shovel!");
-        Instantiate(prefab, spawnPos, playerRotation);
+        thing.transform.position = spawnPos;
     }
     
     public void PlaceMarker()
@@ -42,7 +44,7 @@ public class ItemHandler : MonoBehaviour
         Vector3 spawnPos = playerPos + playerDirection*spawnDistance;
             
         Debug.Log("Spawned Marker!");
-        Instantiate(markerPrefab, spawnPos, playerRotation);
+       // Instantiate(markerPrefab, spawnPos, playerRotation);
     }
     
     public void PutOnSunGlasses()

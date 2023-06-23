@@ -123,6 +123,8 @@ GameObject:
   - component: {fileID: 1422276028167123899}
   - component: {fileID: 1456432886546240594}
   - component: {fileID: -7181215577048169763}
+  - component: {fileID: 4412257178604255763}
+  - component: {fileID: 4883362575753789410}
   m_Layer: 0
   m_Name: military_shovel_correctedPivot
   m_TagString: Untagged
@@ -181,6 +183,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851525a511360164ca92e462ef54150f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  shovelEquipped: 0
+--- !u!114 &4412257178604255763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798941964771797249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb287b78e7f9d3a4584c9b100b61b55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: 4b62cf6815ec71b4fa477d8b34f5fba6, type: 2}
+--- !u!136 &4883362575753789410
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798941964771797249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.7514229
+  m_Height: 5.9555883
+  m_Direction: 1
+  m_Center: {x: -0.0036888123, y: -0.04316187, z: 0}
 --- !u!1 &2965871163485732754
 GameObject:
   m_ObjectHideFlags: 0

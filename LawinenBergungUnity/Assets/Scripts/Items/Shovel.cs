@@ -1,41 +1,38 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Shovel : MonoBehaviour
 {
-    private Animator animator;
-    public bool shovelEquipped;
-    private Vector3 startPos;
+
+    [SerializeField] private GameObject player;
 
     private void Awake()
     {
-        animator = gameObject.GetComponent<Animator>();
-        startPos = transform.position;
     }
 
     private void Update()
     {
-        if (animator.GetBool("HeadUnfolded") && animator.GetBool("HandleUnfolded") && shovelEquipped == false)
-        {
-            shovelEquipped = true;
-            //translate shovel to a better position
-            transform.Translate(10f, -10f,0f ,Space.Self);
-            Debug.Log("Shovel Equipped!");
-        }
-        
         
     }
 
-    public void setHeadBool()
+    public void takeShovel()
     {
-        animator.SetBool("HeadUnfolded", true);
-        Debug.Log("Head Unfolded");
+        transform.parent.parent = player.transform;
+        
+        //translate shovel to a better position
+        Vector3 playerPos = player.transform.position;
+        Vector3 playerDirection = player.transform.forward;
+        Quaternion playerRotation = player.transform.rotation;
+        float attachDistance = 4;
+        
+        Vector3 attachPos = playerPos + playerDirection*attachDistance;
+        attachPos.x += 2;
+        attachPos.y -= 2;
+        transform.parent.position = attachPos;
+        Debug.Log("Shovel Equipped!");
     }
-    public void setHandleBool()
-    {
-        animator.SetBool("HandleUnfolded", true);
-        Debug.Log("Handle Unfolded!");
-    }
+
 }
