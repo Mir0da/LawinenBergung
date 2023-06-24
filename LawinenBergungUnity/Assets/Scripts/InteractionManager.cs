@@ -87,7 +87,7 @@ public class InteractionManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             helpCount++;
-            helpCountLabel.SetText(helpCount.ToString());
+            helpCountLabel.SetText("Hilfen: " + helpCount.ToString());
             
             StopDisplay();
             StartCoroutine(DisplayForDuration(helpLabel, currentInteraction.HelpMsg, 5.0f));
@@ -113,7 +113,7 @@ public class InteractionManager : MonoBehaviour
         else
         {
             errorCount++; 
-            errorCountLabel.SetText(errorCount.ToString());
+            errorCountLabel.SetText("Fehler: " + errorCount.ToString());
             
             StartCoroutine(DisplayForDuration(errorLabel, currentInteraction.ErrorMsg, 5.0f));
         }

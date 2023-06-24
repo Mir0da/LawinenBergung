@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class Suchgerät : MonoBehaviour
 {
+    [SerializeField] private GameObject gerät;
     [SerializeField] private GameObject sender;
     [SerializeField] private TextMeshProUGUI meterAnzeige;
-    [SerializeField] private TextMeshProUGUI winkelAnzeige;
     [SerializeField] private GameObject player;
     [SerializeField] private Image arrowFarLeft;
     [SerializeField] private Image arrowLeft;
@@ -91,5 +91,12 @@ public class Suchgerät : MonoBehaviour
         arrowFarLeft.gameObject.SetActive(false);
         arrowRight.gameObject.SetActive(false);
         arrowLeft.gameObject.SetActive(false);
+    }
+
+    public void takeLocater()
+    {
+       Destroy(gerät);
+               
+       Debug.Log("Destroyed Locator!");
     }
 }

@@ -50,7 +50,7 @@ public class SpawnRandom : MonoBehaviour
         float x = Random.Range(MinX, MaxX);
         //Y ist fix damit die Haufen nicht ind er Luft herumschweben 
         //float y = Random.Range(MinY, MaxY);
-        float y = 8.5f; //Testhöhe
+        float y = 7.5f; //Testhöhe
         float z = Random.Range(MinZ, MaxZ);
 
         return new Vector3(x, y, z);;

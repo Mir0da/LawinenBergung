@@ -32,6 +32,9 @@ public class Shovel : MonoBehaviour
         attachPos.x += 2;
         attachPos.y -= 2;
         transform.parent.position = attachPos;
+        transform.rotation = playerRotation;
+        //face the thing towards the player
+        transform.rotation *= Quaternion.Euler(0, 180, 0);
         Debug.Log("Shovel Equipped!");
     }
 

@@ -21,11 +21,15 @@ public class ItemHandler : MonoBehaviour
     public void spawnShovel()
     {
         SpawnInFront(shovel,5);
+                
+        Debug.Log("Spawned Shovel!");
     }
     
     public void spawnLocator()
     {
         SpawnInFront(locator,0.3f);
+                
+        Debug.Log("Spawned Locator!");
     }
     private void SpawnInFront(GameObject thing, float distance)
     {
@@ -35,8 +39,7 @@ public class ItemHandler : MonoBehaviour
         float spawnDistance = distance;
             
         Vector3 spawnPos = playerPos + playerDirection*spawnDistance;
-        
-        Debug.Log("Spawned Shovel!");
+
         thing.transform.position = spawnPos;
         thing.transform.rotation = Rotation;
         //face the thing towards the player
