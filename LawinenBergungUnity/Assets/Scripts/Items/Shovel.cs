@@ -8,9 +8,11 @@ public class Shovel : MonoBehaviour
 {
 
     [SerializeField] private GameObject player;
+    private AudioSource audioSrc;
 
     private void Awake()
     {
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -36,6 +38,11 @@ public class Shovel : MonoBehaviour
         //face the thing towards the player
         transform.rotation *= Quaternion.Euler(0, 180, 0);
         Debug.Log("Shovel Equipped!");
+    }
+
+    public void playDiggSound()
+    {
+        audioSrc.Play();
     }
 
 }
