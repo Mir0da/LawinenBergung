@@ -18,10 +18,18 @@ public class Suchgerät : MonoBehaviour
     [SerializeField] private Image arrowFarRight;
 
     private float distance;
+    bool keepPlaying;
+    private AudioSource audioSrc;
+
+    private void Awake()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         DisableAllArrows();
+        StartCoroutine(SoundOut());
     }
 
     // Update is called once per frame
@@ -96,7 +104,19 @@ public class Suchgerät : MonoBehaviour
     public void takeLocater()
     {
        Destroy(gerät);
-               
+       keepPlaying = true;
+
+
        Debug.Log("Destroyed Locator!");
+    }
+
+    IEnumerator SoundOut()
+    {
+        while (keepPlaying)
+        {
+            audioSrc.Play();
+            Debug.Log("Beeeeep");
+            yield return new WaitForSeconds(Mathf.Clamp(Mathf.Sqrt(distance)/2,1,5));
+        }
     }
 }
