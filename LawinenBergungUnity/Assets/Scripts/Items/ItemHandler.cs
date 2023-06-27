@@ -8,6 +8,7 @@ public class ItemHandler : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject shovel;
     [SerializeField] private GameObject locator;
+    [SerializeField] private GameObject probe;
     
 
     //[SerializeField]private PostProcessProfile sunGlassProfile;
@@ -39,11 +40,15 @@ public class ItemHandler : MonoBehaviour
         float spawnDistance = distance;
             
         Vector3 spawnPos = playerPos + playerDirection*spawnDistance;
-
+    
         thing.transform.position = spawnPos;
         thing.transform.rotation = Rotation;
         //face the thing towards the player
         thing.transform.rotation *= Quaternion.Euler(0, 180, 0);
+        
+        Debug.Log(thing);
+        Debug.Log(spawnPos);
+        Debug.Log(Rotation);
     }
     
     public void PlaceMarker()

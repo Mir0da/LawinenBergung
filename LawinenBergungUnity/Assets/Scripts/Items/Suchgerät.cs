@@ -21,7 +21,7 @@ public class Suchgerät : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        disableAllArrows();
+        DisableAllArrows();
     }
 
     // Update is called once per frame
@@ -46,45 +46,45 @@ public class Suchgerät : MonoBehaviour
         playerVect.y = 0;
         float angle = Vector3.SignedAngle(targetDir, playerVect, Vector3.up);
         
-        displayAngleAsArrow(angle);
+        DisplayAngleAsArrow(angle);
         
         //winkelAnzeige.SetText(Math.Round(angle,1).ToString() + "°");
     }
 
-    private void displayAngleAsArrow(float angle)
+    private void DisplayAngleAsArrow(float angle)
     {
         double roundedAngel = Math.Round(angle, 1);
 
         if (roundedAngel <= 10 && roundedAngel >= -10)
         {
-            disableAllArrows();
+            DisableAllArrows();
             arrowMid.gameObject.SetActive(true);
         }
         else if (roundedAngel > 10 && roundedAngel <= 45)
         {
-            disableAllArrows();
+            DisableAllArrows();
             arrowLeft.gameObject.SetActive(true);
         }
         else if (roundedAngel >= -45 && roundedAngel < -10)
         {
-            disableAllArrows(); 
+            DisableAllArrows(); 
             arrowRight.gameObject.SetActive(true);
         }
         else if (roundedAngel > 45 && roundedAngel < 180)
         {
-            disableAllArrows();
+            DisableAllArrows();
             arrowFarLeft.gameObject.SetActive(true);
         }
         else if (roundedAngel < -45 && roundedAngel >= -180)
         {
-            disableAllArrows();
+            DisableAllArrows();
             arrowFarRight.gameObject.SetActive(true);
             
         }
 
     }
 
-    private void disableAllArrows()
+    private void DisableAllArrows()
     {
         arrowMid.gameObject.SetActive(false);
         arrowFarRight.gameObject.SetActive(false);
