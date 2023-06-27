@@ -18,7 +18,7 @@ public class Suchgerät : MonoBehaviour
     [SerializeField] private Image arrowFarRight;
 
     private float distance;
-    bool keepPlaying;
+    public bool keepPlaying;
     private AudioSource audioSrc;
 
     private void Awake()
@@ -105,8 +105,6 @@ public class Suchgerät : MonoBehaviour
     {
        Destroy(gerät);
        keepPlaying = true;
-
-
        Debug.Log("Destroyed Locator!");
     }
 

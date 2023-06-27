@@ -9,6 +9,8 @@ public class ItemHandler : MonoBehaviour
     [SerializeField] private GameObject shovel;
     [SerializeField] private GameObject locator;
     [SerializeField] private GameObject probe;
+    [SerializeField] private GameObject glove;
+    [SerializeField] private GameObject rightSnowpile;
     
 
     //[SerializeField]private PostProcessProfile sunGlassProfile;
@@ -32,14 +34,23 @@ public class ItemHandler : MonoBehaviour
                 
         Debug.Log("Spawned Locator!");
     }
+
+    public void spawnMarker()
+    {
+        Vector3 pilePos = rightSnowpile.transform.position;
+        Vector3 spawnPos = pilePos;
+
+        glove.transform.position = spawnPos + Vector3.up*1.7f;
+        Debug.Log("Spawned Marker!");
+
+    }
     private void SpawnInFront(GameObject thing, float distance)
     {
         Vector3 playerPos = player.transform.position;
         Vector3 playerDirection = player.transform.forward;
         Quaternion Rotation = player.transform.rotation;
-        float spawnDistance = distance;
             
-        Vector3 spawnPos = playerPos + playerDirection*spawnDistance;
+        Vector3 spawnPos = playerPos + playerDirection* distance;
     
         thing.transform.position = spawnPos;
         thing.transform.rotation = Rotation;
@@ -50,19 +61,7 @@ public class ItemHandler : MonoBehaviour
         Debug.Log(spawnPos);
         Debug.Log(Rotation);
     }
-    
-    public void PlaceMarker()
-    { 
-        Vector3 playerPos = player.transform.position;
-        Vector3 playerDirection = player.transform.forward;
-        Quaternion playerRotation = player.transform.rotation;
-        float spawnDistance = 10;
-            
-        Vector3 spawnPos = playerPos + playerDirection*spawnDistance;
-            
-        Debug.Log("Spawned Marker!");
-       // Instantiate(markerPrefab, spawnPos, playerRotation);
-    }
+
     
     public void PutOnSunGlasses()
     { 
