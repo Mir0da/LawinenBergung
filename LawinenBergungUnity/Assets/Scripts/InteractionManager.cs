@@ -24,8 +24,8 @@ public class InteractionManager : MonoBehaviour
     private Interaction currentInteraction;
     private int interactionIndex;
     private Camera cam;
-    private int errorCount;
-    private int helpCount;
+    public int errorCount;
+    public int helpCount;
 
     private void Awake()
     {
@@ -46,6 +46,9 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
+        PlayerPrefs.SetInt("Help", helpCount);
+        PlayerPrefs.SetInt("Error", errorCount);
+        
         if (InventoryController.isClosed == true)
         {
             if (Input.GetMouseButtonDown(0))

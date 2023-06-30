@@ -50,11 +50,12 @@
      <Compile Include="Assets\Scripts\InteractionManager.cs" />
      <Compile Include="Assets\Scripts\Items\HighlightAtHovering.cs" />
      <Compile Include="Assets\Scripts\Items\InventoryController.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\SpawnRandom.cs" />
      <Compile Include="Assets\Scripts\Cameras\FirstPersonCam.cs" />
      <Compile Include="Assets\Scripts\Items\Suchgerät.cs" />
      <Compile Include="Assets\Scripts\Items\ItemHandler.cs" />
-     <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\EndScreen.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UI" />
      <Folder Include="Assets\Sounds\Footstep(Snow and Grass)\StepsLoop" />
