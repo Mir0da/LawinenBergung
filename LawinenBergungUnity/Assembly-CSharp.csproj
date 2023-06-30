@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\Interaction.cs" />
      <Compile Include="Assets\Scripts\MovePlayer.cs" />
      <Compile Include="Assets\Scripts\Items\Shovel.cs" />
+     <Compile Include="Assets\Scripts\Items\SuchSonde.cs" />
      <Compile Include="Assets\Scripts\InteractionManager.cs" />
      <Compile Include="Assets\Scripts\Items\HighlightAtHovering.cs" />
      <Compile Include="Assets\Scripts\Items\InventoryController.cs" />
@@ -53,7 +54,7 @@
      <Compile Include="Assets\Scripts\Cameras\FirstPersonCam.cs" />
      <Compile Include="Assets\Scripts\Items\Suchgerät.cs" />
      <Compile Include="Assets\Scripts\Items\ItemHandler.cs" />
-     <Compile Include="Assets\Scripts\Items\SuchSonde.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UI" />
      <Folder Include="Assets\Sounds\Footstep(Snow and Grass)\StepsLoop" />
