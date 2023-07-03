@@ -19,7 +19,7 @@ public class SuchSonde : MonoBehaviour
             Transform circleTransform = snowPile.transform.Find("Circle").GetChild(x);
             gameObject.transform.position = circleTransform.position;
             transform.LookAt(snowPile.transform);
-            transform.position -= transform.forward * 5;
+            transform.position -= transform.forward * 2;
             //1f = time it takes to poke into the snow and pull it out again 
             StartCoroutine(probeStabAnimation(1f));
             yield return new WaitForSeconds(2f);
