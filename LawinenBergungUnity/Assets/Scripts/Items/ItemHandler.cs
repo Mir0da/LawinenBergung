@@ -23,7 +23,7 @@ public class ItemHandler : MonoBehaviour
 
     public void spawnShovel()
     {
-        SpawnInFront(shovel,5);
+        SpawnInFront(shovel,0.5f);
                 
         Debug.Log("Spawned Shovel!");
     }
@@ -33,6 +33,13 @@ public class ItemHandler : MonoBehaviour
         SpawnInFront(locator,0.3f);
                 
         Debug.Log("Spawned Locator!");
+    }
+
+    public void spawnProbe()
+    {
+        SpawnInFront(probe,1f);
+                
+        Debug.Log("Spawned Probe!");
     }
 
     public void spawnMarker()

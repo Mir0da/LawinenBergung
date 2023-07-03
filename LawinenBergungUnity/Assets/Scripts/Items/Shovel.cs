@@ -28,7 +28,7 @@ public class Shovel : MonoBehaviour
         Vector3 playerPos = player.transform.position;
         Vector3 playerDirection = player.transform.forward;
         Quaternion playerRotation = player.transform.rotation;
-        float attachDistance = 4;
+        float attachDistance = 0.5f;
         
         Vector3 attachPos = playerPos + playerDirection*attachDistance;
         attachPos.x += 2;
