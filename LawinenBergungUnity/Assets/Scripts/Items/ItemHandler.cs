@@ -49,6 +49,7 @@ public class ItemHandler : MonoBehaviour
 
         glove.transform.position = spawnPos + Vector3.up*0.3f;
         Debug.Log("Spawned Marker!");
+        InventoryController.closeInventory();
 
     }
     private void SpawnInFront(GameObject thing, float distance)
@@ -67,6 +68,8 @@ public class ItemHandler : MonoBehaviour
         Debug.Log(thing);
         Debug.Log(spawnPos);
         Debug.Log(Rotation);
+
+        InventoryController.closeInventory();
     }
 
     

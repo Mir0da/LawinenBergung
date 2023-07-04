@@ -3,7 +3,32 @@ guid: fe993ad0db9efaf4e8dec543042727af
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body.001
+    second: {fileID: 2100000, guid: a4e951ae758ddf34ebcbdb877a3f9c3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Display
+    second: {fileID: 2100000, guid: 6f3aa15ade6f7fa4595caeef4cddac4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Markierung
+    second: {fileID: 2100000, guid: 176606f70f6458242bb4572c1098940a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Schalter
+    second: {fileID: 2100000, guid: aef3ee400dfbebd4dae2c48c562c0ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: holes
+    second: {fileID: 2100000, guid: a2157bac88bb4c14d815a0727ef73f47, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

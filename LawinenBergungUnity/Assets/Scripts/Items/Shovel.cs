@@ -68,7 +68,6 @@ public class Shovel : MonoBehaviour
             animator.SetTrigger("shovelDigTrigger");
             yield return new WaitForSeconds(1f);
             playDiggSound();
-            
             Debug.Log("Destroy Pile" + x);
             Destroy(pilesTransform.gameObject);
             yield return new WaitForSeconds(2f);
