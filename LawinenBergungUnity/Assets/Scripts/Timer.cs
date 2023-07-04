@@ -7,7 +7,8 @@ using UnityEngine.Serialization;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private float timeLeft;[SerializeField] private TextMeshProUGUI timerLabel;
+    [SerializeField] private float timeLeft;
+    [SerializeField] private TextMeshProUGUI timerLabel;
     private bool timerOn = false;
 
     

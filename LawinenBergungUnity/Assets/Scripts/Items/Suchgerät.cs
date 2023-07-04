@@ -39,9 +39,16 @@ public class Suchgerät : MonoBehaviour
         calcAngle();
     }
     void calcDistance(){
-    
         distance = Vector3.Distance(player.transform.position,sender.transform.position);
-        meterAnzeige.SetText(Math.Round(distance,1).ToString() + "m");
+        if (distance < 60)
+        {
+          meterAnzeige.SetText(Math.Round(distance,1).ToString() + "m");  
+        }
+        else
+        {
+           meterAnzeige.SetText(" ");
+        }
+        
     }
 
     void calcAngle()
@@ -61,34 +68,42 @@ public class Suchgerät : MonoBehaviour
 
     private void DisplayAngleAsArrow(float angle)
     {
-        double roundedAngel = Math.Round(angle, 1);
-
-        if (roundedAngel <= 10 && roundedAngel >= -10)
+        if (distance < 60)
+        {
+           double roundedAngel = Math.Round(angle, 1);
+           
+           if (roundedAngel <= 10 && roundedAngel >= -10)
+           {
+               DisableAllArrows();
+               arrowMid.gameObject.SetActive(true);
+           }
+           else if (roundedAngel > 10 && roundedAngel <= 45)
+           {
+               DisableAllArrows();
+               arrowLeft.gameObject.SetActive(true);
+           }
+           else if (roundedAngel >= -45 && roundedAngel < -10)
+           {
+               DisableAllArrows(); 
+               arrowRight.gameObject.SetActive(true);
+           }
+           else if (roundedAngel > 45 && roundedAngel < 180)
+           {
+               DisableAllArrows();
+               arrowFarLeft.gameObject.SetActive(true);
+           }
+           else if (roundedAngel < -45 && roundedAngel >= -180)
+           {
+               DisableAllArrows();
+               arrowFarRight.gameObject.SetActive(true);
+               
+           } 
+        }
+        else
         {
             DisableAllArrows();
-            arrowMid.gameObject.SetActive(true);
         }
-        else if (roundedAngel > 10 && roundedAngel <= 45)
-        {
-            DisableAllArrows();
-            arrowLeft.gameObject.SetActive(true);
-        }
-        else if (roundedAngel >= -45 && roundedAngel < -10)
-        {
-            DisableAllArrows(); 
-            arrowRight.gameObject.SetActive(true);
-        }
-        else if (roundedAngel > 45 && roundedAngel < 180)
-        {
-            DisableAllArrows();
-            arrowFarLeft.gameObject.SetActive(true);
-        }
-        else if (roundedAngel < -45 && roundedAngel >= -180)
-        {
-            DisableAllArrows();
-            arrowFarRight.gameObject.SetActive(true);
-            
-        }
+        
 
     }
 
