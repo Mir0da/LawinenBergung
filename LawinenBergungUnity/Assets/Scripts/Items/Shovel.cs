@@ -67,21 +67,14 @@ public class Shovel : MonoBehaviour
             transform.LookAt(snowPile.transform);
             transform.position -= transform.forward * 2;
         
-            setTriggerDigAnimation();
+            Debug.Log("Set Trigger");
+            animator.SetTrigger("shovelDigTrigger");
+            playDiggSound();
             yield return new WaitForSeconds(2f);
             
             Debug.Log("Destroy Pile");
             Destroy(pilesTransform);
             
         }
-        
     }
-
-    private void setTriggerDigAnimation()
-    {
-        Debug.Log("Set Trigger");
-        animator.SetTrigger("takeShovelTrigger");
-        playDiggSound();
-    }
-
 }

@@ -5343,6 +5343,18 @@ MonoBehaviour:
             m_StringArgument: takeShovelTrigger
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1601548216}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - GameObject: {fileID: 2899134241118156423}
     Instruction: Grabe die Person aus
     HelpMsg: asdf
@@ -6553,7 +6565,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392552169}
-  m_LocalRotation: {x: -0.49373937, y: 0.50618327, z: -0.50618327, w: 0.49373937}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6561,7 +6573,7 @@ Transform:
   - {fileID: 1042321835}
   m_Father: {fileID: 1020805293}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 1.426, y: 90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1392552171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7826,7 +7838,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746918245}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 383b5f497fd77ba40a42cb9dea9463ab, type: 3}
   m_Name: 
@@ -8656,7 +8668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.9
+      value: 54.836
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8664,7 +8676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 83.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9596,7 +9608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534398955702829802, guid: 512503915875f0249b34566eab0147ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 54.1
       objectReference: {fileID: 0}
     - target: {fileID: 534398955702829802, guid: 512503915875f0249b34566eab0147ba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9604,7 +9616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534398955702829802, guid: 512503915875f0249b34566eab0147ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 83.1
       objectReference: {fileID: 0}
     - target: {fileID: 534398955702829802, guid: 512503915875f0249b34566eab0147ba, type: 3}
       propertyPath: m_LocalRotation.w
