@@ -516,7 +516,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.49999976, y: 0.50000036}
 --- !u!114 &68745618
 MonoBehaviour:
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29622638, g: 0.67729604, b: 1, a: 0.7019608}
+  m_Color: {r: 0, g: 0.24027616, b: 0.4433962, a: 0.80784315}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1788,19 +1788,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe993ad0db9efaf4e8dec543042727af, type: 3}
   m_PrefabInstance: {fileID: 479342673}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &232287491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232287489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb287b78e7f9d3a4584c9b100b61b55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightMaterial: {fileID: 2100000, guid: 4b62cf6815ec71b4fa477d8b34f5fba6, type: 2}
 --- !u!65 &232287492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1826,7 +1813,7 @@ GameObject:
   - component: {fileID: 250242928}
   - component: {fileID: 250242927}
   m_Layer: 5
-  m_Name: Marker
+  m_Name: Handschuh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1903,7 +1890,7 @@ GameObject:
   - component: {fileID: 273517077}
   - component: {fileID: 273517079}
   m_Layer: 5
-  m_Name: Phone
+  m_Name: Telefon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4760,11 +4747,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4956,7 +4943,7 @@ MonoBehaviour:
     m_Bits: 8
   interactions:
   - GameObject: {fileID: 273517075}
-    Instruction: Setzte einen Notruf ab.
+    Instruction: Benutze dein Telefon um einen  Notruf abzusetzten.
     HelpMsg: "W\xE4hle dein Telefon im Rucksack(I) aus."
     ErrorMsg: Das ist nicht dein Telefon
     OnExecution:
@@ -4964,7 +4951,7 @@ MonoBehaviour:
         m_Calls: []
   - GameObject: {fileID: 1592824371}
     Instruction: "Nimm dein Suchger\xE4t aus dem Rucksack"
-    HelpMsg: "Den Rucksack \xF6ffnest du mit I"
+    HelpMsg: "\xD6ffne deinen Rucksack mit I und w\xE4hle das Suchger\xE4t aus"
     ErrorMsg: "Das ist nicht das Suchger\xE4t"
     OnExecution:
       m_PersistentCalls:
@@ -4981,10 +4968,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1592824371}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 147079396}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - GameObject: {fileID: 1210927210}
     Instruction: "Schalte das Suchger\xE4t ein"
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    HelpMsg: "Um das Suchger\xE4t einzuschalten klicke auf den gelben Schalter"
+    ErrorMsg: "Das ist nicht der \"An\"-Schalter. Dr\xFCcke auf den gelben Schiebeschalter."
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5025,9 +5036,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 232287489}
-    Instruction: "Nimm das Suchger\xE4t"
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: "Nimm das Suchger\xE4t auf."
+    HelpMsg: "Klicke auf das Suchger\xE4t um es aufzunehmen"
+    ErrorMsg: "Du musst das Suchger\xE4t mitnehmen! Klicke daruaf um es aufzunehmen."
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5056,16 +5067,19 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 2899134241118156423}
-    Instruction: "W\xE4hle die Richtige Stelle aus"
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: "Orientiere dich an der Anzeige des Suchger\xE4ts und w\xE4hle die
+      richtige Stelle aus."
+    HelpMsg: Orientier dich mit Hilfe der Pfeile und der Meter anZeige um die Richtige
+      Stelle zu finden und klicke diese dann an.
+    ErrorMsg: "Das ist leider nicht die richtige Stelle, achte auf die Anzeige des
+      Suchger\xE4ts"
     OnExecution:
       m_PersistentCalls:
         m_Calls: []
   - GameObject: {fileID: 250242925}
-    Instruction: Markiere die Stelle mit deinem Handschuh aus deinem Rucksack
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: Markiere die Stelle mit deinem Handschuh aus deinem Rucksack.
+    HelpMsg: "Mach deinen Rucksack mit I auf und w\xE4hle deinen Handschuh aus."
+    ErrorMsg: Das ist nicht der Handschuh.
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5093,10 +5107,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1956991345}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - GameObject: {fileID: 1784841757}
     Instruction: Nimm Die Suchsonde aus deinem Rucksack
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    HelpMsg: "\xD6ffne den Rucksack mit I und w\xE4hle die Sonde aus."
+    ErrorMsg: 'Das ist nicht die Sonde. '
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5112,10 +5138,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 393880809}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1784841757}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - GameObject: {fileID: 1042321836}
-    Instruction: 'Entfalte die Sonde: Klicke auf den roten Teil'
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: Entfalte die Sonde:Fange mit dem Rote teil an
+    HelpMsg: Entfalte den roten Sondenteil indem du darauf klickst.
+    ErrorMsg: Das ist nicht der richtige Sondenteil
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5132,9 +5182,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 1042321837}
-    Instruction: 'Entfalte die Sonde: Klicke auf den blauen Teil'
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: 'Entfalte die Sonde: mach mit dem blauen Teil weiter'
+    HelpMsg: Entfalte den blauen Sondenteil indem du darauf klickst.
+    ErrorMsg: Das ist der falsche Sondenteil
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5151,9 +5201,10 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 1042321838}
-    Instruction: 'Entfalte die Sonde: Klicke auf den ersten silbernen Teil'
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: 'Entfalte die Sonde: entfalte den ersten silbernen Sondenteil.'
+    HelpMsg: "W\xE4hle den silbernen Sondenteil aus der mit dem blauen verbunden
+      ist."
+    ErrorMsg: Das ist nicht der richtige Sondenteil.
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5170,9 +5221,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 1042321839}
-    Instruction: 'Entfalte die Sonde: Klicke auf den zweiten silbernen Teil'
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: 'Entfalte die Sonde: entfalte den zweiten silbernen Sondenteil.'
+    HelpMsg: "W\xE4hle den silbernen Sondenteil aus der noch eingeklappt ist."
+    ErrorMsg: Das ist der flasche Sondenteil
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5189,9 +5240,11 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 2899134241118156423}
-    Instruction: "W\xE4hle den Schneehaufen aus um darin mit der Sonde zu suchen"
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: "W\xE4hle den Schneehaufen aus um darin in einem Spiralf\xF6rmigen
+      Muster mit der Sonde zu suchen."
+    HelpMsg: "W\xE4hle den Schneehaufen aus den du zuvor mit deinem Handschuh markiert
+      hast."
+    ErrorMsg: Das ist nicht die richtige Stelle.
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5209,8 +5262,8 @@ MonoBehaviour:
           m_CallState: 2
   - GameObject: {fileID: 1851898796}
     Instruction: Nehme die Schaufel aus deinem Rucksack
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    HelpMsg: "\xD6ffne den Rucksack mit I und w\xE4hle die Schaufel aus."
+    ErrorMsg: Das ist nicht die Schaufel in deinem Rucksack.
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5238,10 +5291,35 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1341207826}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1851898796}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - GameObject: {fileID: 1732738323}
-    Instruction: Entfalte die Schaufel head
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: Entfalte das Schaufelblatt.
+    HelpMsg: Entfalte das Schaufelblatt(der untere Teil der Schaufel) indem du darauf
+      klickst.
+    ErrorMsg: Das ist nicht das Schaufelblatt
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5258,9 +5336,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 843755039}
-    Instruction: Entfalte die Schaufel handle
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: Entfalte den Griff der Schaufel.
+    HelpMsg: Entfalte den Griff der Schaufel indem du darauf klickst.
+    ErrorMsg: Das ist nicht der Schaufelgriff
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5325,9 +5403,9 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   - GameObject: {fileID: 1601548212}
-    Instruction: Nimm die schaufel auf
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: Nimm die Schaufel auf
+    HelpMsg: Nimm die Schaufel auf indem du darauf klickst
+    ErrorMsg: Das ist nicht die Schaufel
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5356,9 +5434,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 2899134241118156423}
-    Instruction: Grabe die Person aus
-    HelpMsg: asdf
-    ErrorMsg: asdf
+    Instruction: Grabe die Person aus.
+    HelpMsg: "W\xE4hle den Schneehaufe aus um dei Person auszugraben."
+    ErrorMsg: 'Das ist nicht die richtige Stelle. '
     OnExecution:
       m_PersistentCalls:
         m_Calls:
@@ -5366,6 +5444,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Shovel, Assembly-CSharp
           m_MethodName: startDigAnimation
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1767275584}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5382,6 +5472,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   Inventory: {fileID: 1793532165}
+  itemName: {fileID: 1978525592}
   errorCount: 0
   helpCount: 0
 --- !u!114 &1131006737
@@ -5572,7 +5663,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1210927214
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5589,7 +5680,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1210927215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6811,7 +6903,7 @@ GameObject:
   - component: {fileID: 1592824373}
   - component: {fileID: 1592824375}
   m_Layer: 5
-  m_Name: Locater
+  m_Name: "Suchger\xE4t"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7410,7 +7502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1664135275
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7435,8 +7527,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 842.58325, y: -136.20569}
-  m_SizeDelta: {x: -1744.0425, y: -671.8126}
+  m_AnchoredPosition: {x: 837.5315, y: -229.66505}
+  m_SizeDelta: {x: -1733.9388, y: -858.7313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664135276
 MonoBehaviour:
@@ -7845,7 +7937,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746918245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 383b5f497fd77ba40a42cb9dea9463ab, type: 3}
   m_Name: 
@@ -7914,7 +8006,7 @@ GameObject:
   - component: {fileID: 1784841760}
   - component: {fileID: 1784841759}
   m_Layer: 5
-  m_Name: Probe
+  m_Name: Sonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8011,6 +8103,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 698075229}
+  - {fileID: 1978525591}
   m_Father: {fileID: 1223599113}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8194,7 +8287,7 @@ GameObject:
   - component: {fileID: 1815839573}
   - component: {fileID: 1815839572}
   m_Layer: 5
-  m_Name: Sunglasses
+  m_Name: Sonnenbrille
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8369,7 +8462,7 @@ GameObject:
   - component: {fileID: 1851898798}
   - component: {fileID: 1851898800}
   m_Layer: 5
-  m_Name: Shovel
+  m_Name: Schaufel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9212,6 +9305,141 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956991345}
+  m_CullTransparentMesh: 1
+--- !u!1 &1978525590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1978525591}
+  - component: {fileID: 1978525593}
+  - component: {fileID: 1978525592}
+  m_Layer: 5
+  m_Name: Itemname
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1978525591
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978525590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793532162}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -91}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1978525592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978525590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1978525593
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978525590}
   m_CullTransparentMesh: 1
 --- !u!1 &2032281194
 GameObject:

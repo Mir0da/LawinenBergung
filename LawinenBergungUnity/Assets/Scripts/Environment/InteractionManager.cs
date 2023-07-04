@@ -16,6 +16,8 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private List<Interaction> interactions;
     [SerializeField] private Canvas Inventory;
+    
+    [SerializeField] private TextMeshProUGUI itemName;
 
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
@@ -65,27 +67,30 @@ public class InteractionManager : MonoBehaviour
         }
         else
         {
-            if (Input.GetMouseButtonDown(0))
+            //Set up the new Pointer Event
+            m_PointerEventData = new PointerEventData(m_EventSystem);
+            //Set the Pointer Event Position to that of the mouse position
+            m_PointerEventData.position = Input.mousePosition;
+
+            //Create a list of Raycast Results
+            List<RaycastResult> results = new List<RaycastResult>();
+
+            //Raycast using the Graphics Raycaster and mouse click position
+            m_Raycaster.Raycast(m_PointerEventData, results);
+            
+            
+            foreach (RaycastResult result in results)
             {
-                //Set up the new Pointer Event
-                m_PointerEventData = new PointerEventData(m_EventSystem);
-                //Set the Pointer Event Position to that of the mouse position
-                m_PointerEventData.position = Input.mousePosition;
-
-                //Create a list of Raycast Results
-                List<RaycastResult> results = new List<RaycastResult>();
-
-                //Raycast using the Graphics Raycaster and mouse click position
-                m_Raycaster.Raycast(m_PointerEventData, results);
-
-                //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
-                foreach (RaycastResult result in results)
+                if (Input.GetMouseButtonDown(0))
                 {
+                    //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
                     CheckInteractionOrder(result.gameObject);
                     Debug.Log("Hit " + result.gameObject.name);
                 }
+                itemName.SetText("" + result.gameObject.name.ToString());
             }
         }
+        
 
         if (Input.GetKeyDown(KeyCode.H))
         {

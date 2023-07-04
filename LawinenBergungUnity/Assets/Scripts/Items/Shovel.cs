@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Shovel : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Shovel : MonoBehaviour
 
     public void takeShovel()
     {
-        transform.parent.parent = player.transform;
+        //transform.parent.parent = player.transform;
         
         //translate shovel to a better position
         Vector3 playerPos = player.transform.position;
@@ -60,21 +61,22 @@ public class Shovel : MonoBehaviour
         Debug.Log("Child Count:" + childCount);
         for (int x = 0; x < childCount; x++)
         {
-            Debug.Log("Beginn for loop");
-            Transform pilesTransform = snowPile.transform.Find("Piles").GetChild(x);
+            Transform pilesTransform = snowPile.transform.Find("Piles").GetChild(0);
 
             gameObject.transform.position = pilesTransform.position;
-            transform.LookAt(snowPile.transform);
-            transform.position -= transform.forward * 2;
-        
-            Debug.Log("Set Trigger");
+
             animator.SetTrigger("shovelDigTrigger");
+            yield return new WaitForSeconds(1f);
             playDiggSound();
+            
+            Debug.Log("Destroy Pile" + x);
+            Destroy(pilesTransform.gameObject);
             yield return new WaitForSeconds(2f);
-            
-            Debug.Log("Destroy Pile");
-            Destroy(pilesTransform);
-            
         }
+        
+        yield return new WaitForSeconds(3f);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

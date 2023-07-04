@@ -3,7 +3,6 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneTemplate;
 
 public class SpawnRandom : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class SpawnRandom : MonoBehaviour
 
     private float MinX = 0;
     private float MaxX = 120;
-    //Y ist fix damit die Haufen nicht ind er Luft herumschweben 
+    //Y ist fix damit die Haufen nicht in der Luft herumschweben 
     private float MinY = 10;
     private float MaxY = 10;
     private float MinZ = 0;
