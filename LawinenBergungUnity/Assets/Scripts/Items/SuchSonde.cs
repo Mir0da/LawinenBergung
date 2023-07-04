@@ -8,6 +8,7 @@ public class SuchSonde : MonoBehaviour
 
     public void startStabAnimation()
     {
+        transform.rotation *= Quaternion.Euler(0, 0, 0);
         StartCoroutine(CheckSnowPile(debugSnowPile));
     }
 

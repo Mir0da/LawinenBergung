@@ -23,7 +23,7 @@ public class ItemHandler : MonoBehaviour
 
     public void spawnShovel()
     {
-        SpawnInFront(shovel,0.5f);
+        SpawnInFront(shovel,0.8f);
                 
         Debug.Log("Spawned Shovel!");
     }
@@ -47,7 +47,7 @@ public class ItemHandler : MonoBehaviour
         Vector3 pilePos = rightSnowpile.transform.position;
         Vector3 spawnPos = pilePos;
 
-        glove.transform.position = spawnPos + Vector3.up*1.7f;
+        glove.transform.position = spawnPos + Vector3.up*0.3f;
         Debug.Log("Spawned Marker!");
 
     }

@@ -270,7 +270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383b5f497fd77ba40a42cb9dea9463ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObj: {fileID: 465794656}
+  dummy: {fileID: 0}
+  rightSnowPile: {fileID: 0}
+  falseSnowPiles: []
 --- !u!65 &465794658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -503,7 +505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383b5f497fd77ba40a42cb9dea9463ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObj: {fileID: 465794656}
+  dummy: {fileID: 0}
+  rightSnowPile: {fileID: 0}
+  falseSnowPiles: []
 --- !u!4 &1299921239
 Transform:
   m_ObjectHideFlags: 0

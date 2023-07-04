@@ -113,7 +113,6 @@ public class Suchgerät : MonoBehaviour
         while (keepPlaying)
         {
             audioSrc.Play();
-            Debug.Log("Beeeeep");
             yield return new WaitForSeconds(Mathf.Clamp(Mathf.Sqrt(distance)/2,1,5));
         }
     }
