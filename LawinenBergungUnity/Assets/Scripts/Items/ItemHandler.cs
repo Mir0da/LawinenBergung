@@ -38,7 +38,7 @@ public class ItemHandler : MonoBehaviour
     public void spawnProbe()
     {
         SpawnInFront(probe,1f);
-                
+        probe.transform.rotation = Quaternion.Euler(90,90,0);        
         Debug.Log("Spawned Probe!");
     }
 

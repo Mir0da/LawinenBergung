@@ -4780,7 +4780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4788,7 +4788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4800,7 +4800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2479678050951798585, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5572,7 +5572,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1210927214
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5589,8 +5589,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1210927215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6641,6 +6640,14 @@ PrefabInstance:
     - target: {fileID: 874051993733273680, guid: 512503915875f0249b34566eab0147ba, type: 3}
       propertyPath: m_Name
       value: Snowpile
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224149695028263889, guid: 512503915875f0249b34566eab0147ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960920465016157168, guid: 512503915875f0249b34566eab0147ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512503915875f0249b34566eab0147ba, type: 3}
@@ -9649,6 +9656,14 @@ PrefabInstance:
     - target: {fileID: 874051993733273680, guid: 512503915875f0249b34566eab0147ba, type: 3}
       propertyPath: m_Name
       value: SnowpileRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224149695028263889, guid: 512503915875f0249b34566eab0147ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960920465016157168, guid: 512503915875f0249b34566eab0147ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.435
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512503915875f0249b34566eab0147ba, type: 3}
