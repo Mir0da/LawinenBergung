@@ -11,17 +11,19 @@ public class InventoryController : MonoBehaviour
     [SerializeField] private GameObject cam;
 
     public static bool isClosed;
+    public static bool close;
     
     // Start is called before the first frame update
     void Start()
     {
         isClosed = true;
+        close = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) || close)
         {
             if (isClosed)
             {
@@ -55,6 +57,13 @@ public class InventoryController : MonoBehaviour
                 //disable playermovement too?
                 //player.GetComponent<MovePlayer>().enabled = true;
             }
+
+            close = false;
         }
+    }
+
+    public static void closeInventory()
+    {
+        close = true;
     }
 }
