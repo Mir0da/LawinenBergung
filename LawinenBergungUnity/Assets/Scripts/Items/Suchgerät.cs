@@ -43,7 +43,7 @@ public class Suchgerät : MonoBehaviour
         distance = Vector3.Distance(player.transform.position,sender.transform.position);
         if (distance < 60)
         {
-          meterAnzeige.SetText(Math.Round(distance,1).ToString() + "m");  
+          meterAnzeige.SetText(Math.Round((distance-1),1).ToString() + "m");   //-1 damit klarer ist wann man da ist. der Player ist in einer Höhe von 2m und min 2m erscheint zu viel.
         }
         else
         {
@@ -55,7 +55,6 @@ public class Suchgerät : MonoBehaviour
     void calcAngle()
     {
         //set the y value to 0 to get the Angle on the x,z plane instead of the smallest angle in the room
-        //ToDo : still neccessary with "SignedAngle"?
         Vector3 targetDir = sender.transform.position - this.player.transform.position;
         targetDir.y = 0;
         Vector3 playerVect = player.transform.forward;

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 75ac0010c491c5f47beb7e7b61590386
   - enabled: 1
+    path: Assets/Scenes/Disclaimer.unity
+    guid: a785fb3ada02c634091ba06834e6d20a
+  - enabled: 1
     path: Assets/Scenes/SophieScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1

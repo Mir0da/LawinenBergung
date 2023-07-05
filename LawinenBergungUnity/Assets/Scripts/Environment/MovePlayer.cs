@@ -28,23 +28,23 @@ public class MovePlayer : MonoBehaviour
         moveZ = Input.GetAxis("Vertical");
 
         transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x,-100,200),
+            Mathf.Clamp(transform.position.x,-75,75),
             Mathf.Clamp(transform.position.y,1,2),
-            Mathf.Clamp(transform.position.z,-100,200));
+            Mathf.Clamp(transform.position.z,-75,75));
         
         if(moveX < 0)
         {
-            transform.localPosition += transform.right * moveX * moveSpeed;
+            transform.localPosition += transform.right * moveX * moveSpeed * Time.deltaTime;
         }
         if(moveX > 0){
-            transform.localPosition += transform.right * moveX * moveSpeed;
+            transform.localPosition += transform.right * moveX * moveSpeed * Time.deltaTime;
         }
         
         if(moveZ < 0){
-            transform.localPosition += transform.forward * moveZ * moveSpeed;
+            transform.localPosition += transform.forward * moveZ * moveSpeed * Time.deltaTime;
         }
         if(moveZ > 0){
-            transform.localPosition += transform.forward * moveZ * moveSpeed;
+            transform.localPosition += transform.forward * moveZ * moveSpeed * Time.deltaTime;
         }
         if (moveZ != 0 || moveX != 0)
         {

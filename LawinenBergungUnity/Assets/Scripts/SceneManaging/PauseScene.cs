@@ -13,6 +13,8 @@ public class PauseScene : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+
+        InteractionManager.pause = false;
         SceneManager.UnloadScene ("Pause_scene");
     }
 

@@ -77,8 +77,8 @@ public class ItemHandler : MonoBehaviour
     public void PutOnSunGlasses()
     { 
         Debug.Log("Put On Glasses!");
-        sun.intensity = 1.3f;
-        sun.color = new Color(0.9f, 0.9f, 0.99f);
+        sun.intensity = 1.5f;
+        sun.color = new Color(0.95f, 0.95f, 0.99f);
         InventoryController.closeInventory();
     }
 }

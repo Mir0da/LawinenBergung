@@ -30,15 +30,23 @@ public class InteractionManager : MonoBehaviour
     private Camera cam;
     private int errorCount;
     private int helpCount;
+    private bool gotHelp;
+    [HideInInspector]public static bool pause;
     [HideInInspector]public static bool ready;
 
     private void Awake()
     {
         cam = Camera.main;
+ 
     }
 
     private void Start()
     {
+        interactionIndex = 0;
+        errorCount = 0;
+        helpCount = 0;
+        gotHelp = false;
+        pause = false;
         helpLabel.SetText("");
         errorLabel.SetText("");
         currentInteraction = interactions[interactionIndex];
@@ -106,16 +114,22 @@ public class InteractionManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            helpCount++;
+            if (gotHelp == false)
+            {
+                helpCount++;
+                gotHelp = true;
+            }
+            
             helpCountLabel.SetText("Hilfen: " + helpCount.ToString());
             
             StopDisplay();
             StartCoroutine(DisplayForDuration(helpLabel, currentInteraction.HelpMsg, 5.0f));
 
         }
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (Input.GetKeyDown(KeyCode.Escape) && pause == false)
         {
+            pause = true;
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
             SceneManager.LoadScene("Pause_scene", LoadSceneMode.Additive);
@@ -131,7 +145,8 @@ public class InteractionManager : MonoBehaviour
         {
             StopDisplay();
             currentInteraction.OnExecution?.Invoke();
-            
+
+            gotHelp = false;
             interactionIndex++;
             currentInteraction = interactions[interactionIndex];   
             instructionLabel.SetText(currentInteraction.Instruction);
