@@ -26,6 +26,11 @@ public class MovePlayer : MonoBehaviour
         //get Input
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
+
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x,-100,200),
+            Mathf.Clamp(transform.position.y,1,2),
+            Mathf.Clamp(transform.position.z,-100,200));
         
         if(moveX < 0)
         {

@@ -1306,8 +1306,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178876654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 30}
-  m_LocalScale: {x: 1.5925, y: 2.5443752, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1830564705}
@@ -3534,7 +3534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791766273}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 72.36542, y: -1.5654116, z: 9.948572}
+  m_LocalPosition: {x: 72.36542, y: -3.5654116, z: -20.051428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3967,6 +3967,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 874051993733273680, guid: 512503915875f0249b34566eab0147ba, type: 3}
   m_PrefabInstance: {fileID: 908513859}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &929782513 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2730077964999589648, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
+  m_PrefabInstance: {fileID: 1042321834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &942662550
 GameObject:
   m_ObjectHideFlags: 0
@@ -4113,7 +4118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 72.36542, y: -1.5654116, z: 9.948572}
+  m_LocalPosition: {x: 72.36542, y: -3.5654116, z: -20.051428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4660,7 +4665,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuchSensorLawine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2730077964717924708, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
 --- !u!4 &1042321835 stripped
 Transform:
@@ -4690,6 +4696,16 @@ GameObject:
 --- !u!95 &1042321840 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2730077964445572180, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
+  m_PrefabInstance: {fileID: 1042321834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1042321843 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2730077964644558172, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
+  m_PrefabInstance: {fileID: 1042321834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1099476883 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2730077964988846647, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
   m_PrefabInstance: {fileID: 1042321834}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1131006734
@@ -4802,6 +4818,18 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0.1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 356525810}
+          m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+          m_MethodName: reduceTime
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -5061,6 +5089,18 @@ MonoBehaviour:
             m_StringArgument: redCane_Trigger
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1042321843}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - GameObject: {fileID: 1042321837}
     Instruction: 'Entfalte die Sonde: mach mit dem blauen Teil weiter'
     HelpMsg: Entfalte den blauen Sondenteil indem du darauf klickst.
@@ -5078,6 +5118,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: blueCane_Trigger
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 929782513}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 1042321838}
@@ -5100,6 +5152,18 @@ MonoBehaviour:
             m_StringArgument: silverCane1_Trigger
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1099476883}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - GameObject: {fileID: 1042321839}
     Instruction: 'Entfalte die Sonde: entfalte den zweiten silbernen Sondenteil.'
     HelpMsg: "W\xE4hle den silbernen Sondenteil aus der noch eingeklappt ist."
@@ -5117,6 +5181,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: silverCane2_Trigger
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1420323263}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
   - GameObject: {fileID: 2899134241118156423}
@@ -5137,6 +5213,18 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 356525810}
+          m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+          m_MethodName: reduceTime
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -5184,6 +5272,18 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1851898796}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1392552169}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -5344,6 +5444,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 356525810}
+          m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+          m_MethodName: reduceTime
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - GameObject: {fileID: 0}
     Instruction: Ende Erreicht
     HelpMsg: asdf
@@ -5399,7 +5511,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1210927214
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5416,8 +5528,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1210927215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6302,6 +6413,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 35.41118, z: 102.863655}
   m_Center: {x: 0.000057239045, y: 16.06364, z: -35.095264}
+--- !u!136 &1420323263 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2730077964457625899, guid: 1359332be22aa6b41a67172cc29e3ab8, type: 3}
+  m_PrefabInstance: {fileID: 1042321834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1422621542
 GameObject:
   m_ObjectHideFlags: 0
@@ -8288,15 +8404,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.845
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 0.089
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43
+      value: 43.071
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalRotation.w
