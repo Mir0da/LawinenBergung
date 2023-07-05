@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,12 @@ using UnityEngine;
 public class SuchSonde : MonoBehaviour
 {
     [SerializeField] private GameObject debugSnowPile;
+    private AudioSource audioSrc;
+
+    private void Awake()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
 
     public void startStabAnimation()
     {
@@ -29,7 +36,9 @@ public class SuchSonde : MonoBehaviour
             transform.position -= transform.forward * 2;
             //1f = time it takes to poke into the snow and pull it out again 
             StartCoroutine(probeStabAnimation(1f));
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
+            audioSrc.Play();
+            yield return new WaitForSeconds(1f);
             
         }
         
@@ -38,8 +47,10 @@ public class SuchSonde : MonoBehaviour
     private IEnumerator probeStabAnimation(float time)
     {
         float timePast = 0;
+        
         while (timePast < time)
-        {
+        { 
+            
            transform.position += Time.deltaTime * 2 * transform.forward;
            yield return null;
            timePast += Time.deltaTime;

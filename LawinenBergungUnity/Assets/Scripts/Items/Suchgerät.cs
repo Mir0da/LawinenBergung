@@ -16,9 +16,10 @@ public class Suchgerät : MonoBehaviour
     [SerializeField] private Image arrowMid;
     [SerializeField] private Image arrowRight;
     [SerializeField] private Image arrowFarRight;
+    [SerializeField] private Image noArrow;
 
     private float distance;
-    public bool keepPlaying;
+    private bool keepPlaying;
     private AudioSource audioSrc;
 
     private void Awake()
@@ -46,7 +47,7 @@ public class Suchgerät : MonoBehaviour
         }
         else
         {
-           meterAnzeige.SetText(" ");
+           meterAnzeige.SetText("__m");
         }
         
     }
@@ -102,6 +103,7 @@ public class Suchgerät : MonoBehaviour
         else
         {
             DisableAllArrows();
+            noArrow.gameObject.SetActive(true);
         }
         
 
@@ -114,6 +116,7 @@ public class Suchgerät : MonoBehaviour
         arrowFarLeft.gameObject.SetActive(false);
         arrowRight.gameObject.SetActive(false);
         arrowLeft.gameObject.SetActive(false);
+        noArrow.gameObject.SetActive(false);
     }
 
     public void takeLocater()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,7 +37,7 @@ public class Shovel : MonoBehaviour
         
         Vector3 attachPos = playerPos + playerDirection*attachDistance;
         //attachPos.x += 0.5f;
-        attachPos.y -= 0.5f;
+        attachPos.y -= 0.7f;
         transform.parent.position = attachPos;
         transform.parent.rotation = playerRotation;
         animator.SetTrigger("takeShovelTrigger");
@@ -62,20 +63,24 @@ public class Shovel : MonoBehaviour
         for (int x = 0; x < childCount; x++)
         {
             Transform pilesTransform = snowPile.transform.Find("Piles").GetChild(0);
-
-            gameObject.transform.position = pilesTransform.position;
+            
+            Debug.Log(pilesTransform.position);
+            
+            Vector3 temp= pilesTransform.position;
+            temp.y += 1f;
+            gameObject.transform.parent.position = temp;
+      
 
             animator.SetTrigger("shovelDigTrigger");
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.7f);
             playDiggSound();
             Debug.Log("Destroy Pile" + x);
             Destroy(pilesTransform.gameObject);
             yield return new WaitForSeconds(2f);
         }
         
-        yield return new WaitForSeconds(3f);
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        //wait for after digging to not let the scene end too fast
+        yield return new WaitForSeconds(4f);
+        InteractionManager.ready = true;
     }
 }

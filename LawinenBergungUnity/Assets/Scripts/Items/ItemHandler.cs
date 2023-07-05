@@ -11,6 +11,7 @@ public class ItemHandler : MonoBehaviour
     [SerializeField] private GameObject probe;
     [SerializeField] private GameObject glove;
     [SerializeField] private GameObject rightSnowpile;
+    [SerializeField] private Light sun;
     
 
     //[SerializeField]private PostProcessProfile sunGlassProfile;
@@ -76,10 +77,9 @@ public class ItemHandler : MonoBehaviour
     public void PutOnSunGlasses()
     { 
         Debug.Log("Put On Glasses!");
-        //deactivate LightSources
-        
-        //change Postprocessing Filters
-
+        sun.intensity = 1.3f;
+        sun.color = new Color(0.9f, 0.9f, 0.99f);
+        InventoryController.closeInventory();
     }
 }
 

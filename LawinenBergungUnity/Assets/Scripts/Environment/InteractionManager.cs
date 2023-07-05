@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class InteractionManager : MonoBehaviour
 {
@@ -26,8 +28,9 @@ public class InteractionManager : MonoBehaviour
     private Interaction currentInteraction;
     private int interactionIndex;
     private Camera cam;
-    public int errorCount;
-    public int helpCount;
+    private int errorCount;
+    private int helpCount;
+    [HideInInspector]public static bool ready;
 
     private void Awake()
     {
@@ -48,6 +51,7 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
+        
         PlayerPrefs.SetInt("Help", helpCount);
         PlayerPrefs.SetInt("Error", errorCount);
         
@@ -90,6 +94,14 @@ public class InteractionManager : MonoBehaviour
                 itemName.SetText("" + result.gameObject.name.ToString());
             }
         }
+
+        if (interactionIndex == interactions.Count || ready == true)
+        {
+            //all steps done
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
         
 
         if (Input.GetKeyDown(KeyCode.H))
@@ -100,6 +112,13 @@ public class InteractionManager : MonoBehaviour
             StopDisplay();
             StartCoroutine(DisplayForDuration(helpLabel, currentInteraction.HelpMsg, 5.0f));
 
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            SceneManager.LoadScene("Pause_scene", LoadSceneMode.Additive);
         }
     }
 
@@ -139,5 +158,10 @@ public class InteractionManager : MonoBehaviour
         StopAllCoroutines();
         errorLabel.SetText("");
         helpLabel.SetText("");
+    }
+
+    public void setReady()
+    {
+        ready = true;
     }
 }
